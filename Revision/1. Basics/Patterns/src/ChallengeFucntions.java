@@ -112,11 +112,81 @@ public class ChallengeFucntions {
 
     }
 
+    public  static void armStrongNum(int num){
+        int givenNum = num;
+        int compNum = givenNum;
+        int firstDigit =0;
+        while(num > 0){
+            num/=10;
+            firstDigit++;
+        }
+        int sum = 0;
+
+        while(givenNum > 0){
+            int digit = givenNum%10;
+            int expoNum = 1;
+            for(int i=0; i<firstDigit; i++){
+                expoNum *= digit;
+            }
+            givenNum /= 10;
+            sum += expoNum;
+        }
+        if(sum == compNum){
+            System.out.println("num is a Armstrong number");
+        }else{
+            System.out.println("num is not Armstrong number");
+        }
+
+
+    }
+
+    public static boolean isPalindrome(int num){
+        int numCopy = num;
+        int reverseNum = 0;
+        while(num > 0){
+            int lastDigit = num % 10;
+            reverseNum = reverseNum*10 + lastDigit;
+            num/=10;
+        }
+        if(numCopy == reverseNum){
+            return true;
+        }
+        return false;
+    }
+
+
+    public static void printLeftHalfPyramid(int maxRows) {
+        System.out.println("\nHere is Left Half Pyramid");
+        int rows = maxRows;
+        while (rows > 0) {
+            // this loop prints spaces
+            int j = 0;
+            while (j < rows - 1) {
+                System.out.print("  ");
+                j++;
+            }
+
+            // this loop prints stars
+            int i = 0;
+            while (i <= (maxRows-rows)) {
+                System.out.print("*");
+                i++;
+            }
+            System.out.println();
+            rows--;
+        }
+    }
 
     public static void main(String[] args) {
 
-        fibonacciSeries(getInput());
 
+        //       12. printLeftHalfPyramid(getInput());
+
+        //       11. isPalindrome(getInput()
+
+        //       10. armStrongNum(getInput());
+
+        //        9.fibonacciSeries(getInput());
 
         //        int num = getInput(); int num1 = getInput();
         //      8.  gcd(num, num1);
