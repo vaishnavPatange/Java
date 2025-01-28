@@ -162,14 +162,14 @@ public class ChallengeFucntions {
             // this loop prints spaces
             int j = 0;
             while (j < rows - 1) {
-                System.out.print("  ");
+                System.out.print("   ");
                 j++;
             }
 
             // this loop prints stars
             int i = 0;
             while (i <= (maxRows-rows)) {
-                System.out.print("*");
+                System.out.print(" *");
                 i++;
             }
             System.out.println();
@@ -180,7 +180,7 @@ public class ChallengeFucntions {
     public static void main(String[] args) {
 
 
-        //       12. printLeftHalfPyramid(getInput());
+        printLeftHalfPyramid(getInput());
 
         //       11. isPalindrome(getInput()
 
