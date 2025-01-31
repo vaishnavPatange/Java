@@ -7,7 +7,7 @@ class deleteElement {
                 System.out.print("Enter the number you want to delete : ");
                 int num = sc.nextInt();
 
-                PrintArray.print(deleteElement(arr, num));
+                ArrayUtility.printArray(deleteElement(arr, num));
 
         }
 

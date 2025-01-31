@@ -1,7 +1,7 @@
  class ReverseArray {
          public static void main(String[] args) {
                  int[] arr = ArrayUtility.arrayInput();
-                PrintArray.print( reverseArray(arr));
+                ArrayUtility.printArray( reverseArray(arr));
          }
 
          public static int[] reverseArray(int[] arr){
