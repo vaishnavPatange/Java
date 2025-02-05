@@ -1,0 +1,4 @@
+package in;
+
+class Defaults {
+}
