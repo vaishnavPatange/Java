@@ -1,5 +1,9 @@
 package com.example.utils;
 
+import com.example.geometry.Circle;
+import com.example.geometry.Rectangle;
+import com.example.geometry.Square;
+
 import java.util.Scanner;
 
 public class GeometryCalculator {
@@ -23,7 +27,24 @@ public class GeometryCalculator {
                 int num = sc.nextInt();
                 getInput(num);
 
-                
+                if( num == 3){
+                        double length = sc.nextDouble();
+                        double breadth = sc.nextDouble();
+                        Rectangle rec = new Rectangle(length, breadth);
+                        System.out.printf("The area of given rectangle is : %f", rec.area());
+                } else if (num == 1 || num == 2) {
+                        double rad = sc.nextDouble();
+                        Circle circle = new Circle(rad);
+                        if(num == 1){
+                                System.out.printf("The area of circle is : %f", circle.area());
+                        } else{
+                                System.out.printf("The circumference of circle is : %f", circle.circumference());
+                        }
+                } else if (num == 4) {
+                        double side = sc.nextDouble();
+                        Square sq = new Square(side);
+                        System.out.printf("The area of given square is : %f", sq.area());
+                }
 
         }
 
