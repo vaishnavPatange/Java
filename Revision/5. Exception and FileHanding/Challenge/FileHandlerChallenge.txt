@@ -1,0 +1,5 @@
+Hello this is the file handler challenge
+In this challenge I am going to get the file name as an input 
+and display it in the terminal
+and I'm also handling exceptions if in case file name is 
+not found
