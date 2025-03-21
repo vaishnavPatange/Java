@@ -10,9 +10,9 @@ public class Testing {
                 Thread t2 = new Thread(p2);
                 Thread t3 = new Thread(p3);
 
-                t1.start(); t1.join();
+                t1.start(); t1.join(); Thread.sleep(2000);
                 System.out.println("End, thread, "  + p1.getThreadNum());
-                t2.start(); t2.join();
+                t2.start(); t2.join(); Thread.sleep(2000);
                 System.out.println("End, Thread " + p2.getThreadNum());
                 t3.start(); t3.join();
                 System.out.println("End, Thread " + p3.getThreadNum());

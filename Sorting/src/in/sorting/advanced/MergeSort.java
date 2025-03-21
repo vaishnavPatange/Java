@@ -2,65 +2,76 @@ package in.sorting.advanced;
 
 import in.sorting.Utility;
 
+import java.util.Random;
+
 public class MergeSort {
         public static void main(String[] args) {
-                int[] arr = {9, 8,1,2,3,4,6,5,7};
-                Utility.printArray(arr);
+                int[] arr = new int[1000000000];
+                Random random = new Random();
+                for (int i = 0; i < arr.length; i++) {
+                        arr[i] = random.nextInt(10000);
+                }
+//                Utility.printArray(arr);
+                System.out.println("before");
+                long start = System.currentTimeMillis();
                 mergeSort(arr);
-                System.out.println();
-                Utility.printArray(arr);
+                long end = System.currentTimeMillis();
+                System.out.println("after");
+                System.out.println("Time in millis " + (end - start));
+//                Utility.printArray(arr);
+
         }
 
-        public static void mergeSort(int[] inputArray){
-                int inputLength = inputArray.length;
-                if(inputLength <= 1){  // base case
+        public static void mergeSort(int[] arr){
+                int arrLength = arr.length;
+
+                if(arrLength < 2){
                         return;
                 }
 
-                int midIndex = inputLength/2;  // getting mid
-                int[] leftArray = new int[midIndex];  // creating left Array
-                int[] rightArray = new int[inputLength - midIndex];  // creating right Array
+                int mid = arrLength/2;
+                int[] leftArray = new int[mid];
+                int[] rightArray = new int[arrLength - mid];
 
-                for (int i = 0; i < midIndex; i++) { // adding elements leftArray
-                        leftArray[i] = inputArray[i];
-                }  for(int i=midIndex; i<inputLength; i++){ // adding elements rightArray
-                        rightArray[i - midIndex] = inputArray[i];
+                for (int i = 0; i < mid; i++) {
+                        leftArray[i] = arr[i];
+                }
+                for(int j=mid; j<arrLength; j++){
+                        rightArray[j - mid] = arr[j];
                 }
 
-                mergeSort(leftArray);  // recursive call on left Array
-                mergeSort(rightArray); // recursive call on right Array
+                mergeSort(leftArray);
+                mergeSort(rightArray);
 
-                merge(leftArray, rightArray, inputArray);
+                merge(arr, leftArray, rightArray);
 
         }
 
-        public static void merge(int[] leftArray, int[] rightArray, int[] inputArray){
+        public static void merge(int[] arr, int[] leftArray, int[] rightArray){
                 int leftLength = leftArray.length;
                 int rightLength = rightArray.length;
 
                 int i=0, j=0, k=0;
-                while( i < leftLength && j < rightLength){
+                while(i < leftLength && j < rightLength){
                         if(leftArray[i] <= rightArray[j]){
-                                inputArray[k] = leftArray[i];
+                                arr[k] = leftArray[i];
                                 i++;
-                        } else {
-                                inputArray[k] = rightArray[j];
+                        } else{
+                                arr[k] = rightArray[j];
                                 j++;
                         }
                         k++;
                 }
 
-                while ( i < leftLength){
-                        inputArray[k] = leftArray[i];
+                while(i < leftLength){
+                        arr[k] = leftArray[i];
                         i++; k++;
                 }
-
-                while ( j < rightLength){
-                        inputArray[k] = rightArray[j];
-                        j++; k++;
+                while(j < rightLength){
+                        arr[k] = rightArray[j];
+                        k++; j++;
                 }
 
         }
-
 
 }
