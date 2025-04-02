@@ -1,3 +1,5 @@
+package in.lecture;
+
 public class Power {
         public static void main(String[] args) {
                 long num = 4, pow = 1024;

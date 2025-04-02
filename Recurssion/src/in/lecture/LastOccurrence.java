@@ -1,3 +1,5 @@
+package in.lecture;
+
 public class LastOccurrence {
         public static void main(String[] args) {
                 int[] arr = {1, 2, 5, 7, 3, 5, 8, 3, 10, 1};

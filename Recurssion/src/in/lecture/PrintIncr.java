@@ -1,3 +1,5 @@
+package in.lecture;
+
 public class PrintIncr {
         public static void main(String[] args) {
                 printInIncreasing(15);

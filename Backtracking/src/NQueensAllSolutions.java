@@ -1,4 +1,4 @@
-public class NQueens {
+public class NQueensAllSolutions {
 
         public static void main(String[] args) {
                 int n = 7;
@@ -9,16 +9,13 @@ public class NQueens {
                         }
                 }
                 nQueens(chess, 0);
-                System.out.println("Total solutions = " + totalSolutions);
         }
 
-        static int totalSolutions = 0;
 
         public static void nQueens(char[][] chess, int row){
                 if(row == chess.length){
                         System.out.println("----------------------------------------");
                         printChess(chess);
-                        totalSolutions++;
                         return;
                 }
 

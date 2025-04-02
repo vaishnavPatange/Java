@@ -1,3 +1,5 @@
+package in.lecture;
+
 public class NaturalSum {
         public static void main(String[] args) {
                 System.out.printf("Sum of first %d natural numbers is %d",51155,printNaturalSum(51155));
