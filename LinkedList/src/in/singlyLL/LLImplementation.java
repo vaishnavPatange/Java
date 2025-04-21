@@ -1,3 +1,5 @@
+package in.singlyLL;
+
 public class LLImplementation {
         public static class Node{
                 public int data;

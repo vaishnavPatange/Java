@@ -1,4 +1,6 @@
-public class IterSearchLL {
+package in.singlyLL;
+
+public class RecSearch {
         public static class Node{
                 public int data;
                 Node next;
@@ -9,21 +11,16 @@ public class IterSearchLL {
         }
         public static Node head;
         public static Node tail;
-        public static int size;
-
         public void addLast(int data){
                 Node newNode = new Node(data);
                 if(head == null){
                         head = tail = newNode;
-                        size++;
                         return;
                 }
                 tail.next = newNode;
                 tail = newNode;
-                size++;
         }
-
-        public void printList(){
+        public void printLL(){
                 Node temp = head;
                 while(temp != null){
                         System.out.print(temp.data + " -> ");
@@ -32,24 +29,30 @@ public class IterSearchLL {
                 System.out.println("null");
         }
 
-        public int searchKey(int key){
-                Node temp = head;
-                int i = 0;
-                while(temp != null){
-                        if(temp.data == key){
-                                return i;
-                        }
-                        temp = temp.next;
-                        i++;
+        public int helper(Node head, int key){
+                if(head == null){
+                        return -1;
                 }
-                return -1;
+                if(head.data == key){
+                        return 0;
+                }
+                int idx = helper(head.next, key);
+                if(idx == -1){
+                        return -1;
+                }
+                return idx+1;
         }
 
-        public static void main(String[] args) {
-                IterSearchLL ll = new IterSearchLL();
-                ll.addLast(2); ll.addLast(8); ll.addLast(10); ll.addLast(19);
-                ll.printList();
-                System.out.println(ll.searchKey(10));
-                System.out.println(ll.searchKey(67));
+        public int recSearch(int key){
+                return helper(head, key);
         }
+
+        public static void main(String[] args){
+                RecSearch ll = new RecSearch();
+                ll.addLast(2); ll.addLast(8); ll.addLast(87); ll.addLast(19);
+                ll.printLL();
+                System.out.println(ll.recSearch(87));
+                System.out.println(ll.recSearch(17));
+        }
+
 }

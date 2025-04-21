@@ -15,15 +15,16 @@ public class QuickSort {
                 Utility.printArray(arr);
         }
 
-        public static void quickSort(int[] arr, int lowIndex, int highIndex) {
+        public static void quickSort(int[] arr, int lowIndex, int highIndex){
                 if(lowIndex >= highIndex){
                         return;
                 }
-                int pivot = arr[highIndex];
-                int pivotIndex = partition(arr, lowIndex, highIndex, pivot);
 
-                quickSort(arr, lowIndex, pivotIndex-1);
-                quickSort(arr, pivotIndex+1, highIndex);
+                int pivot = arr[highIndex];
+                int pivIndex = partition(arr, lowIndex, highIndex,pivot);
+
+                quickSort(arr, lowIndex, pivIndex - 1);
+                quickSort(arr, pivIndex + 1, highIndex);
 
         }
 
@@ -31,7 +32,7 @@ public class QuickSort {
                 int leftIndex = lowIndex;
                 int rightIndex = highIndex - 1;
                 while(leftIndex <= rightIndex){
-                        while(leftIndex <= rightIndex &&  arr[leftIndex] <= pivot){
+                        while(leftIndex <= rightIndex && arr[leftIndex]  <= pivot){
                                 leftIndex++;
                         }
                         while(leftIndex <= rightIndex && arr[rightIndex] >= pivot){
@@ -39,13 +40,11 @@ public class QuickSort {
                         }
                         if(leftIndex <= rightIndex){
                                 swap(arr, leftIndex, rightIndex);
-                                leftIndex++;
-                                rightIndex--;
+                                leftIndex++; rightIndex--;
                         }
                 }
                 swap(arr, leftIndex, highIndex);
-                return  leftIndex;
-
+                return leftIndex;
         }
 
         public static void swap(int[] arr, int a, int b){

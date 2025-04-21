@@ -1,3 +1,5 @@
+package in.singlyLL;
+
 public class AddInLL {
         public static class Node{
                 public int data;

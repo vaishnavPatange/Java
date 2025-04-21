@@ -1,3 +1,5 @@
+package in.singlyLL;
+
 public class SizeofLL {
         public static class Node{
                 public int data;

@@ -1,3 +1,5 @@
+package in.singlyLL;
+
 import java.util.LinkedList;
 public class linkedListCollection {
         public static void main(String[] args) {
