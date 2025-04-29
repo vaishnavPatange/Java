@@ -12,12 +12,9 @@ public class StackUsingQueue {
                 }
 
                 public void add(int data){
-                        if(isEmpty()){
-                                q1.add(data);
-                        }
                         if(!q1.isEmpty()){
                                 q1.add(data);
-                        } else{
+                        }else{
                                 q2.add(data);
                         }
                 }
@@ -56,12 +53,12 @@ public class StackUsingQueue {
                         int top = -1;
                         if(!q1.isEmpty()){
                                 while(!q1.isEmpty()){
-                                        top = q1.peek();
+                                        top = q1.remove();
                                         q2.add(top);
                                 }
                         } else{
                                 while(!q2.isEmpty()){
-                                        top = q2.peek();
+                                        top = q2.remove();
                                         q1.add(top);
                                 }
                         }
